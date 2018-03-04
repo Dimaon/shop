@@ -45,6 +45,7 @@ def calc_total_cost(collection_to_buy, original_collection)
 end
 # Вынести в класс Корзина (Конец)
 
+# Основное тело программы.
 loop do
   puts "\n\r Что вы хотите купить: \n\r "
 
@@ -69,7 +70,7 @@ loop do
   sleep(0.5)
 end
 
-
+# Выводим купленные продукты с итоговой стоиомстью и остатками
 def cost_collection(collection_to_buy, original_collection)
   collection_to_buy.uniq.to_a.each do |product|
     puts "#{product} - #{product.amount_to_buy} шт."

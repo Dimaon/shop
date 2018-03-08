@@ -8,7 +8,7 @@ class FilmProduct < Product
   end
 
   def to_s
-    "Фильм '#{@title}', #{@year}, реж. #{@director}, #{@price} руб. (осталось: #{@amount})"
+    "Фильм '#{@title}', #{@year}, реж. #{@director}, #{@price} руб."
   end
 
   def update(params)

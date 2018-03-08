@@ -1,10 +1,10 @@
 class ProductCollection
-
   PRODUCT_TYPES = {
       film: {dir: 'films', class: FilmProduct},
       book: {dir: 'books', class: BookProduct},
       disk: {dir: 'disks', class: DiskProduct}
   }
+
   # Принимает на вход массив продуктов
   def initialize(products = [])
     @products = products
@@ -58,5 +58,4 @@ class ProductCollection
     # Не понятно
     self
   end
-
 end

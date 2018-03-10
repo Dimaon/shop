@@ -21,11 +21,11 @@ class FilmProduct < Product
   def self.from_file(file_path)
     lines = File.readlines(file_path, encoding: 'UTF-8').map{|i| i.chomp}
     params = {
-        title: lines[0],
-        director: lines[2],
-        year: lines[3].to_i,
-        price: lines[3].to_i,
-        amount: lines[4].to_i
+      title: lines[0],
+      director: lines[2],
+      year: lines[3].to_i,
+      price: lines[3].to_i,
+      amount: lines[4].to_i
     }
     self.new(params)
   end

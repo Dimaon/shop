@@ -1,8 +1,8 @@
 class ProductCollection
   PRODUCT_TYPES = {
-      film: {dir: 'films', class: FilmProduct},
-      book: {dir: 'books', class: BookProduct},
-      disk: {dir: 'disks', class: DiskProduct}
+    film: {dir: 'films', class: FilmProduct},
+    book: {dir: 'books', class: BookProduct},
+    disk: {dir: 'disks', class: DiskProduct}
   }
 
   # Принимает на вход массив продуктов
@@ -24,7 +24,6 @@ class ProductCollection
       end
     end
       self.new(products)
-
   end
 
   # Метод, чтобы достать все продукты коллекции
@@ -42,20 +41,19 @@ class ProductCollection
   def sort!(params)
     # Делает выбор по параметру by
     case params[:by]
-      when :title
-        @products.sort_by! { |product| product.to_s }
-      when :price
-        @products.sort_by! { |product| product.price }
-      when :amount
-        @products.sort_by! { |product| product.amount }
+    when :title
+      @products.sort_by! { |product| product.to_s }
+    when :price
+      @products.sort_by! { |product| product.price }
+    when :amount
+      @products.sort_by! { |product| product.amount }
     end
 
     # Если запросили сортировку по возрастанию
     @products.reverse! if params[:order] == :asc
 
-    # Возвращаем ссылку на экземпляр, чтобы у него по цепочке можно было вызвать
+    # Возвращаем ссылку на экземпляр класса, чтобы у него по цепочке можно было вызвать
     # другие методы.
-    # Не понятно
     self
   end
 end

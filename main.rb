@@ -18,7 +18,7 @@ loop do
 
   # Вывести список всех продуктов c порядковым номером
   collection.to_a.each_with_index do |product, index|
-    puts "#{index + 1} - #{product} (Осталось: #{cart.current_product_amount(product)})"
+    puts "#{index + 1} - #{product} (Осталось: #{cart.product_amount(product)})"
   end
   puts "0 - выход"
 
@@ -31,12 +31,12 @@ loop do
   break if user_choice == -1
   # Добавить товар в корзину
   product = choosed_product(user_choice, collection)
-  if cart.current_product_amount(product) > 0
+  if cart.product_amount(product) > 0
     cart.add_product(product)
     print "Вы выбрали: "
-    puts "#{cart.current_product}  Осталось: #{cart.current_product_amount}"
+    puts "#{product}  Осталось: #{cart.product_amount(product)}"
     puts "Всего товаров на сумму: #{cart.cost_cart} руб."
-    # sleep(0.5)
+    sleep(0.5)
   else
     puts "Товар закончился"
   end

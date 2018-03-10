@@ -2,24 +2,17 @@ class Cart
   attr_reader :collection
   def initialize
     @collection = {}
-    @amount = 1
   end
 
   def add_product(product)
-    @product = product
-    amount = 1
-    if @collection.has_key?(@product)
-      @collection[@product] += 1
+    if @collection.has_key?(product)
+      @collection[product] += 1
     else
-      @collection[@product] = 1
+      @collection[product] = 1
     end
   end
 
-  def current_product(product = @product)
-    product
-  end
-
-  def current_product_amount(product = @product)
+  def product_amount(product)
     return product.amount unless @collection[product]
     product.amount - @collection[product]
   end
